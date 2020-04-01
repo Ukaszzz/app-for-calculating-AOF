@@ -1,0 +1,143 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.wrap {
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 1300px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-image: url("../img//oil-3629119_1920.jpg");
+  background-repeat: no-repeat;
+}
+
+.wrap label {
+  text-align: center;
+  color: white;
+  font-family: "Fjalla One", sans-serif;
+}
+
+.wrap input {
+  text-align: center;
+  margin: 6px;
+  padding: 4px;
+  color: white;
+  background-color: rgba(141, 129, 129, 0.678);
+  -webkit-box-shadow: 0px 0px 4px 2px rgba(255, 255, 255, 0.5);
+          box-shadow: 0px 0px 4px 2px rgba(255, 255, 255, 0.5);
+  border: 2px solid black;
+  border-radius: 20px;
+}
+
+.wrap .inputData {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.wrap .inputData .qt {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 20%;
+}
+
+.wrap .inputData .delta {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 20%;
+}
+
+.wrap .inputData .presure {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 20%;
+}
+
+.wrap .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.wrap .buttons button {
+  width: 30%;
+  margin: 10px 0;
+  padding: 15px;
+  background-color: #ed7932;
+  border: 2px solid #ed7932;
+  color: white;
+  font-family: "Fjalla One", sans-serif;
+}
+
+.wrap .reset {
+  opacity: 0.5;
+}
+
+.wrap .results {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 30%;
+  margin: 10px auto;
+  color: white;
+  background-color: rgba(141, 129, 129, 0.678);
+  border: 2px solid black;
+  font-family: "Fjalla One", sans-serif;
+}
+
+.wrap div {
+  margin: 10px;
+}
+
+#chartContainer {
+  padding: 0;
+  margin: 0 auto;
+  width: 96%;
+}
+/*# sourceMappingURL=style.css.map */
