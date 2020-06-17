@@ -1,42 +1,75 @@
 var dps = []; //dataPoints.
+let dps2 = [];
 
 var chart = new CanvasJS.Chart("chartContainer", {
   backgroundColor: "rgba(0, 0, 0, 0.678)",
 
   title: {
-    text: ""
+    text: "",
   },
   axisX: {
     title: "q [m3/min]",
     titleFontColor: "white",
     labelFontColor: "white",
-    lineColor: "white"
+    lineColor: "white",
   },
   axisY: {
     title: "(pzł^2-Pdd^2)/q",
     titleFontColor: "white",
     labelFontColor: "white",
-    lineColor: "white"
+    lineColor: "white",
   },
 
   data: [
     {
       type: "scatter",
       color: "green",
-      dataPoints: dps
-    }
-  ]
+      dataPoints: dps,
+    },
+    {
+      type: "line",
+      color: "red",
+      dataPoints: dps2,
+    },
+  ],
 });
 
 function addDataPointsAndRender() {
   let tabx = tabColumn1;
   let taby = tabColumn2;
+  let max = Math.max(...taby);
+  let min = Math.min(...taby);
+  // console.log(taby);
+  // console.log(tabx);
+  // console.log(taby.indexOf(max));
+
+  // console.log(taby);
+  // console.log(tabx);
+  let newx = taby.indexOf(max);
+  let minx = taby.indexOf(min);
+  // console.log(min);
+  let miny = 0.001788 * 0 + 0.793;
+
+  // console.log(newx);
+  dps2.push({
+    x: tabx[newx],
+    y: taby[newx],
+  });
+  dps2.push({
+    x: 0,
+    y: miny,
+  });
+
+  console.log(dps2);
+  taby.splice(taby.indexOf(max), 1);
+  tabx.splice(tabx.indexOf(max), 1);
+
   for (let i = 0; i < tabx.length; i++) {
     xValue = tabx[i];
     yValue = taby[i];
     dps.push({
       x: xValue,
-      y: yValue
+      y: yValue,
     });
   }
 
@@ -84,7 +117,7 @@ function calculateTrendLine(chart) {
   chart.addTo("data", {
     type: "line", //Line series showing trend
     markerSize: 0,
-    dataPoints: [startPoint, endPoint]
+    dataPoints: [startPoint, endPoint],
   });
 }
 

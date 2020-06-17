@@ -115,8 +115,8 @@ const showInDom = () => {
 
   aofMin = aofH * 60;
 
-  aofHDiv.textContent = `AOF/H = ${aofH.toFixed(6)}`;
-  aofMinDiv.textContent = `AOF/min = ${aofMin.toFixed(6)}`;
+  aofHDiv.textContent = `AOF = ${aofH.toFixed(6)} m3/godz`;
+  // aofMinDiv.textContent = `AOF/min = ${aofMin.toFixed(6)}`;
   slopesDiv.textContent = `Slope = ${slope.toFixed(6)}`;
   interceptDiv.textContent = `Intercept = ${intercept.toFixed(6)}`;
   xDiv.textContent = `x = ${x.toFixed(6)}`;
