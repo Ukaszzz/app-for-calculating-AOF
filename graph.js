@@ -23,7 +23,7 @@ var chart = new CanvasJS.Chart("chartContainer", {
   data: [
     {
       type: "scatter",
-      color: "green",
+      color: "yellow",
       dataPoints: dps,
     },
     {
@@ -55,12 +55,12 @@ function addDataPointsAndRender() {
     x: tabx[newx],
     y: taby[newx],
   });
-  dps2.push({
-    x: 0,
-    y: miny,
-  });
+  // dps2.push({
+  //   x: 0,
+  //   y: miny,
+  // });
 
-  console.log(dps2);
+  // console.log(dps2);
   taby.splice(taby.indexOf(max), 1);
   tabx.splice(tabx.indexOf(max), 1);
 
@@ -103,26 +103,39 @@ function calculateTrendLine(chart) {
   e = slope * xSum;
   yIntercept = (ySum - e) / dpsLength;
 
-  var startPoint = getTrendLinePoint(
-    chart.data[0].dataPoints[0].x,
-    slope,
-    yIntercept
-  );
+  var startPoint = getTrendLinePoint(0, slope, yIntercept);
   var endPoint = getTrendLinePoint(
-    chart.data[0].dataPoints[dpsLength - 1].x,
+    chart.data[0].dataPoints[dpsLength - 1].x + 50,
     slope,
     yIntercept
   );
+
+  var startPoint2 = getTrendLinePoint3(0, intercept);
+  var endPoint2 = getTrendLinePoint2(dps2[0].x + 50, slope, intercept);
 
   chart.addTo("data", {
     type: "line", //Line series showing trend
     markerSize: 0,
     dataPoints: [startPoint, endPoint],
   });
+
+  chart.addTo("data", {
+    type: "line", //Line series showing trend
+    markerSize: 0,
+    dataPoints: [startPoint2, endPoint2],
+  });
+  console.log(dps[dps.length - 1].x);
+  console.log(slope);
 }
 
 function getTrendLinePoint(x, slope, intercept) {
   return { x: x, y: slope * x + intercept };
+}
+function getTrendLinePoint2(x, slope, intercept) {
+  return { x: x, y: slope * x + intercept };
+}
+function getTrendLinePoint3(x, intercept) {
+  return { x: x, y: x + intercept };
 }
 
 btnOn.addEventListener("click", addDataPointsAndRender);
