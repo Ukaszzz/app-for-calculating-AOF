@@ -11,12 +11,14 @@
   display: -ms-flexbox;
   display: flex;
   max-width: 1300px;
+  min-height: 101vh;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
   background-image: url("../img//oil-3629119_1920.jpg");
   background-repeat: no-repeat;
+  overflow: hidden;
 }
 
 .wrap label {
@@ -31,10 +33,9 @@
   padding: 4px;
   color: white;
   background-color: rgba(141, 129, 129, 0.678);
-  -webkit-box-shadow: 0px 0px 4px 2px rgba(255, 255, 255, 0.5);
-          box-shadow: 0px 0px 4px 2px rgba(255, 255, 255, 0.5);
+  -webkit-box-shadow: 0px 0px 2px 1px rgba(167, 88, 23, 0.5);
+          box-shadow: 0px 0px 2px 1px rgba(167, 88, 23, 0.5);
   border: 2px solid black;
-  border-radius: 20px;
 }
 
 .wrap .inputData {

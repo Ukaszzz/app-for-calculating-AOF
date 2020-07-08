@@ -10,10 +10,12 @@ $bgcColor: rgba(141, 129, 129, 0.678);
   margin: 0 auto;
   display: flex;
   max-width: 1300px;
+  min-height: 101vh;
   flex-direction: column;
 
   background-image: url("../img//oil-3629119_1920.jpg");
   background-repeat: no-repeat;
+  overflow: hidden;
 
   label {
     text-align: center;
@@ -26,9 +28,8 @@ $bgcColor: rgba(141, 129, 129, 0.678);
     padding: 4px;
     color: white;
     background-color: $bgcColor;
-    box-shadow: 0px 0px 4px 2px rgba(255, 255, 255, 0.5);
+    box-shadow: 0px 0px 2px 1px rgba(167, 88, 23, 0.5);
     border: 2px solid black;
-    border-radius: 20px;
   }
 
   .inputData {
